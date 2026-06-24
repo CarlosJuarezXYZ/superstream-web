@@ -125,7 +125,7 @@ src/
 | ~~IPTV~~ | ~~`IPTV`~~ | ✅ Implementado |
 | ~~Precios~~ | ~~`Pricing`~~ | ✅ Implementado |
 | ~~Beneficios~~ | ~~`Benefits`~~ | ✅ Implementado |
-| Términos | `Terms` | 3 cards con número + categoría + lista de reglas |
+| ~~Términos~~ | ~~`Terms`~~ | ✅ Implementado |
 | CTA Final | `CtaFinal` | Badge + h2 + p + botón WhatsApp grande |
 | Footer | `Footer` | Logo + copyright + 3 trust badges |
 
