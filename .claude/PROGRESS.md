@@ -50,9 +50,12 @@ src/
 │   ├── AIServices/
 │   │   ├── AIServices.tsx
 │   │   └── AIServices.styled.ts
-│   └── IPTV/
-│       ├── IPTV.tsx
-│       └── IPTV.styled.ts
+│   ├── IPTV/
+│   │   ├── IPTV.tsx
+│   │   └── IPTV.styled.ts
+│   └── Pricing/
+│       ├── Pricing.tsx
+│       └── Pricing.styled.ts
 ├── styles/
 │   └── GlobalStyles.ts
 ├── App.tsx
@@ -120,7 +123,7 @@ src/
 |---|---|---|
 | ~~Herramientas de IA~~ | ~~`AIServices`~~ | ✅ Implementado |
 | ~~IPTV~~ | ~~`IPTV`~~ | ✅ Implementado |
-| Precios | `Pricing` | 3 cards (Básico, Combo ★, IPTV) con `featured` variant |
+| ~~Precios~~ | ~~`Pricing`~~ | ✅ Implementado |
 | Beneficios | `Benefits` | 4 cards con ícono + título + descripción |
 | Términos | `Terms` | 3 cards con número + categoría + lista de reglas |
 | CTA Final | `CtaFinal` | Badge + h2 + p + botón WhatsApp grande |
