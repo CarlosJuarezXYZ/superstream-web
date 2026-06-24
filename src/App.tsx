@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
-import Home from './pages/Home'
-import Platforms from './pages/Platforms'
+import Home from './pages/Home/Home'
+import Platforms from './pages/Platforms/Platforms'
 
 function App() {
   return (

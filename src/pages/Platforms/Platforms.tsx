@@ -7,8 +7,8 @@ import {
   SiYoutube,
 } from 'react-icons/si'
 import { FaAmazon, FaTv } from 'react-icons/fa'
-import Badge from '../components/Badge/Badge'
-import PlatformCard from '../components/PlatformCard/PlatformCard'
+import Badge from '../../components/Badge/Badge'
+import PlatformCard from '../../components/PlatformCard/PlatformCard'
 import {
   PlatformsSection,
   SectionHeader,
