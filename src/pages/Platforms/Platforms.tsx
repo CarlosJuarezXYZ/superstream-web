@@ -7,15 +7,9 @@ import {
   SiYoutube,
 } from 'react-icons/si'
 import { FaAmazon, FaTv } from 'react-icons/fa'
-import Badge from '../../components/Badge/Badge'
+import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import PlatformCard from '../../components/PlatformCard/PlatformCard'
-import {
-  PlatformsSection,
-  SectionHeader,
-  SectionTitle,
-  SectionSubtitle,
-  PlatformsGrid,
-} from './Platforms.styled'
+import { PlatformsSection, PlatformsGrid } from './Platforms.styled'
 
 interface Platform {
   id: string
@@ -87,11 +81,11 @@ const PLATFORMS: Platform[] = [
 function Platforms() {
   return (
     <PlatformsSection>
-      <SectionHeader>
-        <Badge>Plataformas Streaming</Badge>
-        <SectionTitle>Todas tus plataformas favoritas</SectionTitle>
-        <SectionSubtitle>Sin complicaciones. Un pago, acceso inmediato.</SectionSubtitle>
-      </SectionHeader>
+      <SectionHeader
+        badge="Plataformas Streaming"
+        title="Todas tus plataformas favoritas"
+        subtitle="Sin complicaciones. Un pago, acceso inmediato."
+      />
 
       <PlatformsGrid>
         {PLATFORMS.map(({ id, name, price, iconBg, icon }) => (

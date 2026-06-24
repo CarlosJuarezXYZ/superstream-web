@@ -35,15 +35,24 @@ src/
 │   ├── Navbar/
 │   │   ├── Navbar.tsx
 │   │   └── Navbar.styled.ts
-│   └── PlatformCard/
-│       ├── PlatformCard.tsx
-│       └── PlatformCard.styled.ts
+│   ├── PlatformCard/
+│   │   ├── PlatformCard.tsx
+│   │   └── PlatformCard.styled.ts
+│   └── SectionHeader/
+│       ├── SectionHeader.tsx
+│       └── SectionHeader.styled.ts
 ├── pages/
 │   ├── Home/
 │   │   └── Home.tsx
-│   └── Platforms/
-│       ├── Platforms.tsx
-│       └── Platforms.styled.ts
+│   ├── Platforms/
+│   │   ├── Platforms.tsx
+│   │   └── Platforms.styled.ts
+│   ├── AIServices/
+│   │   ├── AIServices.tsx
+│   │   └── AIServices.styled.ts
+│   └── IPTV/
+│       ├── IPTV.tsx
+│       └── IPTV.styled.ts
 ├── styles/
 │   └── GlobalStyles.ts
 ├── App.tsx
@@ -109,8 +118,8 @@ src/
 
 | Sección | Página | Notas |
 |---|---|---|
-| Herramientas de IA | `AIServices` | Reutiliza `PlatformCard` × 3 (ChatGPT Plus, Canva Pro, Super Grok) |
-| IPTV | `IPTV` | Reutiliza `PlatformCard` × 3 (Magis TV, IPTV, Flujo TV) |
+| ~~Herramientas de IA~~ | ~~`AIServices`~~ | ✅ Implementado |
+| ~~IPTV~~ | ~~`IPTV`~~ | ✅ Implementado |
 | Precios | `Pricing` | 3 cards (Básico, Combo ★, IPTV) con `featured` variant |
 | Beneficios | `Benefits` | 4 cards con ícono + título + descripción |
 | Términos | `Terms` | 3 cards con número + categoría + lista de reglas |
@@ -119,12 +128,12 @@ src/
 
 ---
 
-## Componente reutilizable pendiente
+## Componentes reutilizables
 
-### SectionHeader (propuesto, aún no creado)
+### SectionHeader ✦ Implementado
 - Encapsula el patrón `Badge + h2 + p` que se repite en todas las secciones
-- Props propuestas: `badge: string`, `title: string`, `subtitle?: string`
-- Las nuevas secciones deben usarlo; `Platforms` lo tiene inline (se unificará en la pasada de refinamiento)
+- Props: `badge: string`, `title: string`, `subtitle?: string`
+- `Platforms` ya lo usa — los styled locales duplicados fueron eliminados
 
 ---
 
