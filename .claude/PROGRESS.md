@@ -126,7 +126,7 @@ src/
 | ~~Precios~~ | ~~`Pricing`~~ | ✅ Implementado |
 | ~~Beneficios~~ | ~~`Benefits`~~ | ✅ Implementado |
 | ~~Términos~~ | ~~`Terms`~~ | ✅ Implementado |
-| CTA Final | `CtaFinal` | Badge + h2 + p + botón WhatsApp grande |
+| ~~CTA Final~~ | ~~`CtaFinal`~~ | ✅ Implementado |
 | Footer | `Footer` | Logo + copyright + 3 trust badges |
 
 ---
