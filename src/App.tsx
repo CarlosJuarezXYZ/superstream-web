@@ -4,6 +4,7 @@ import Platforms from './pages/Platforms/Platforms'
 import AIServices from './pages/AIServices/AIServices'
 import IPTV from './pages/IPTV/IPTV'
 import Pricing from './pages/Pricing/Pricing'
+import Benefits from './pages/Benefits/Benefits'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <AIServices />
       <IPTV />
       <Pricing />
+      <Benefits />
     </>
   )
 }

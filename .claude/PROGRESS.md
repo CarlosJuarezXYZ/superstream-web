@@ -124,7 +124,7 @@ src/
 | ~~Herramientas de IA~~ | ~~`AIServices`~~ | ✅ Implementado |
 | ~~IPTV~~ | ~~`IPTV`~~ | ✅ Implementado |
 | ~~Precios~~ | ~~`Pricing`~~ | ✅ Implementado |
-| Beneficios | `Benefits` | 4 cards con ícono + título + descripción |
+| ~~Beneficios~~ | ~~`Benefits`~~ | ✅ Implementado |
 | Términos | `Terms` | 3 cards con número + categoría + lista de reglas |
 | CTA Final | `CtaFinal` | Badge + h2 + p + botón WhatsApp grande |
 | Footer | `Footer` | Logo + copyright + 3 trust badges |
