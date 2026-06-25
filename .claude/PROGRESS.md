@@ -127,7 +127,7 @@ src/
 | ~~Beneficios~~ | ~~`Benefits`~~ | ✅ Implementado |
 | ~~Términos~~ | ~~`Terms`~~ | ✅ Implementado |
 | ~~CTA Final~~ | ~~`CtaFinal`~~ | ✅ Implementado |
-| Footer | `Footer` | Logo + copyright + 3 trust badges |
+| ~~Footer~~ | ~~`Footer`~~ | ✅ Implementado |
 
 ---
 

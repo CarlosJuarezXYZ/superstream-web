@@ -7,6 +7,7 @@ import Pricing from './pages/Pricing/Pricing'
 import Benefits from './pages/Benefits/Benefits'
 import Terms from './pages/Terms/Terms'
 import CtaFinal from './pages/CtaFinal/CtaFinal'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Benefits />
       <Terms />
       <CtaFinal />
+      <Footer />
     </>
   )
 }
