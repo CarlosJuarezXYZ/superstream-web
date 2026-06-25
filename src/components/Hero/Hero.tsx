@@ -1,13 +1,13 @@
-import { FaWhatsapp, FaAmazon } from 'react-icons/fa'
+import { FaWhatsapp, FaAmazon } from "react-icons/fa";
 import {
   SiNetflix,
   SiHbomax,
   SiCrunchyroll,
   SiParamountplus,
   SiYoutube,
-} from 'react-icons/si'
-import type { IconType } from 'react-icons'
-import Badge from '../Badge/Badge'
+} from "react-icons/si";
+import type { IconType } from "react-icons";
+import Badge from "../Badge/Badge";
 import {
   HeroSection,
   HeroGlow,
@@ -19,19 +19,43 @@ import {
   PlatformsRow,
   PlatformChip,
   PlatformDot,
-} from './Hero.styled'
+} from "./Hero.styled";
+import { motion } from "framer-motion";
 
-const WA_LINK = 'https://wa.me/51943316903'
+const WA_LINK = "https://wa.me/51943316903";
 
 const PLATFORMS: { name: string; color: string; Icon: IconType | null }[] = [
-  { name: 'Netflix',          color: '#e50914', Icon: SiNetflix       },
-  { name: 'Disney+',          color: '#113ccf', Icon: null            },
-  { name: 'HBO Max',          color: '#b5179e', Icon: SiHbomax        },
-  { name: 'Prime Video',      color: '#00a8e0', Icon: FaAmazon        },
-  { name: 'Crunchyroll',      color: '#ff6400', Icon: SiCrunchyroll   },
-  { name: 'Paramount+',       color: '#0066cc', Icon: SiParamountplus },
-  { name: 'YouTube Premium',  color: '#ff0000', Icon: SiYoutube       },
-]
+  { name: "Netflix", color: "#e50914", Icon: SiNetflix },
+  { name: "Disney+", color: "#113ccf", Icon: null },
+  { name: "HBO Max", color: "#b5179e", Icon: SiHbomax },
+  { name: "Prime Video", color: "#00a8e0", Icon: FaAmazon },
+  { name: "Crunchyroll", color: "#ff6400", Icon: SiCrunchyroll },
+  { name: "Paramount+", color: "#0066cc", Icon: SiParamountplus },
+  { name: "YouTube Premium", color: "#ff0000", Icon: SiYoutube },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.35,
+    },
+  },
+};
 
 function Hero() {
   return (
@@ -39,7 +63,9 @@ function Hero() {
       <HeroGlow />
       <Badge>⦿ Streaming · IA · IPTV — Todo en un solo lugar</Badge>
       <HeroTitle>
-        Todo el entretenimiento<br />en un solo lugar
+        Todo el entretenimiento
+        <br />
+        en un solo lugar
       </HeroTitle>
       <HeroSub>
         Accede a Netflix, Disney+, HBO Max, ChatGPT Plus, Canva Pro, IPTV y más.
@@ -52,19 +78,33 @@ function Hero() {
         </WaButton>
         <PlansButton>Ver todos los planes →</PlansButton>
       </HeroCtas>
-      <PlatformsRow>
+      <PlatformsRow
+        as={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {PLATFORMS.map(({ name, color, Icon }) => (
-          <PlatformChip key={name}>
-            {Icon
-              ? <Icon size={14} color={color} />
-              : <PlatformDot $color={color}>●</PlatformDot>
-            }
+          <PlatformChip
+            as={motion.div}
+            key={name}
+            variants={itemVariants}
+            whileHover={{
+              y: -4,
+              scale: 1.03,
+            }}
+          >
+            {Icon ? (
+              <Icon size={14} color={color} />
+            ) : (
+              <PlatformDot $color={color}>●</PlatformDot>
+            )}
             {name}
           </PlatformChip>
         ))}
       </PlatformsRow>
     </HeroSection>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

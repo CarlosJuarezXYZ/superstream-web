@@ -80,7 +80,7 @@ const PLATFORMS: Platform[] = [
 
 function Platforms() {
   return (
-    <PlatformsSection>
+    <PlatformsSection id="products">
       <SectionHeader
         badge="Plataformas Streaming"
         title="Todas tus plataformas favoritas"

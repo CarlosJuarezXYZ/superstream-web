@@ -40,7 +40,7 @@ const BENEFITS: Benefit[] = [
 
 function Benefits() {
   return (
-    <BenefitsSection>
+    <BenefitsSection id="benefits">
       <SectionHeader
         badge="Beneficios"
         title="¿Por qué elegir SuperStream?"

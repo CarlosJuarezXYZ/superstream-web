@@ -53,9 +53,9 @@ const PLANS: Plan[] = [
 
 function Pricing() {
   return (
-    <PricingSection>
+    <PricingSection id="plans">
       <SectionHeader
-        badge="Precios"
+        badge="Planes"
         title="Planes para todos"
         subtitle="Sin pagos internacionales. Sin complicaciones. Un solo pago mensual."
       />

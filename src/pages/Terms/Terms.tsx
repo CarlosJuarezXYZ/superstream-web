@@ -47,7 +47,7 @@ const TERMS: Term[] = [
 
 function Terms() {
   return (
-    <TermsSection>
+    <TermsSection id="terms">
       <SectionHeader
         badge="Términos"
         title="Condiciones del servicio"

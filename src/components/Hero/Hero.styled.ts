@@ -108,9 +108,31 @@ export const PlatformChip = styled.div`
   font-size: 12px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text.secondary};
+
   display: flex;
   align-items: center;
   gap: 6px;
+
+  cursor: default;
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+  &:hover {
+    border-color: rgba(99,102,241,.45);
+    background: rgba(99,102,241,.08);
+    box-shadow: 0 10px 28px rgba(99,102,241,.18);
+
+    svg{
+      transform:scale(1.12);
+    }
+  }
+
+  svg{
+    transition:transform .25s ease;
+  }
 `
 
 export const PlatformDot = styled.span<{ $color: string }>`

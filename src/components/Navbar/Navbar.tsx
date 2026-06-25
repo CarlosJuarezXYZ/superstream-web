@@ -6,14 +6,13 @@ import {
   LogoText,
   NavLinks,
   NavLink,
-  CtaButton,
 } from './Navbar.styled'
 
 const NAV_LINKS = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Precios', href: '#precios' },
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Términos', href: '#terminos' },
+  { label: 'Productos', href: '#products' },
+  { label: 'Planes', href: '#plans' },
+  { label: 'Beneficios', href: '#benefits' },
+  { label: 'Términos', href: '#terms' },
 ]
 
 function Navbar() {
