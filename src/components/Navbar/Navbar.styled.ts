@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Nav = styled.nav`
   position: fixed;
@@ -15,7 +15,7 @@ export const Nav = styled.nav`
   @media (max-width: 768px) {
     padding: 18px 24px;
   }
-`
+`;
 
 export const NavInner = styled.div`
   display: flex;
@@ -23,14 +23,18 @@ export const NavInner = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-`
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 18px;
+  }
+`;
 
 export const LogoWrapper = styled.a`
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-`
+`;
 
 export const LogoIcon = styled.div`
   width: 36px;
@@ -41,7 +45,7 @@ export const LogoIcon = styled.div`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-`
+`;
 
 export const LogoText = styled.span`
   font-size: 18px;
@@ -55,18 +59,21 @@ export const LogoText = styled.span`
   span:last-child {
     color: #818cf8;
   }
-`
+`;
 
 export const NavLinks = styled.ul`
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 768px) {
-    display: none;
+    flex-wrap: wrap;
+    row-gap: 12px;
   }
-`
+`;
 
 export const NavLink = styled.a`
   font-size: 14px;
@@ -78,7 +85,7 @@ export const NavLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.colors.brand.purpleLight};
   }
-`
+`;
 
 export const CtaButton = styled.a`
   display: inline-flex;
@@ -97,4 +104,4 @@ export const CtaButton = styled.a`
   &:hover {
     opacity: 0.88;
   }
-`
+`;

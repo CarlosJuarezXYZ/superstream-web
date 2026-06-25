@@ -37,8 +37,8 @@ export const PlatformName = styled.p`
   text-align: center;
 `
 
-export const PlatformPrice = styled.p`
+export const PlatformPrice = styled.p<{ $accentColor: string }>`
   font-size: 15px;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.brand.purple};
+  color: ${({ $accentColor }) => $accentColor};
 `

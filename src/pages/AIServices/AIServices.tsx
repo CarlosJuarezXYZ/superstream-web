@@ -54,6 +54,7 @@ function AIServices() {
             price={price}
             iconBg={iconBg}
             icon={icon}
+            accentColor="#34d399"
           />
         ))}
       </AIServicesGrid>

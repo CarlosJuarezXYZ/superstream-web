@@ -7,14 +7,15 @@ interface PlatformCardProps {
   name: string
   price: number
   currency?: string
+  accentColor?: string
 }
 
-function PlatformCard({ icon, iconBg, name, price, currency = 'S/' }: PlatformCardProps) {
+function PlatformCard({ icon, iconBg, name, price, currency = 'S/', accentColor = '#6366f1' }: PlatformCardProps) {
   return (
     <Card>
       <IconWrapper $bg={iconBg}>{icon}</IconWrapper>
       <PlatformName>{name}</PlatformName>
-      <PlatformPrice>{currency} {price}</PlatformPrice>
+      <PlatformPrice $accentColor={accentColor}>{currency} {price}</PlatformPrice>
     </Card>
   )
 }

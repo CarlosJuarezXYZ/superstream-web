@@ -39,14 +39,6 @@ function Navbar() {
             </li>
           ))}
         </NavLinks>
-
-        <CtaButton
-          href="https://wa.me/51943316903"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Pedir por WhatsApp
-        </CtaButton>
       </NavInner>
     </Nav>
   )

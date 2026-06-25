@@ -53,6 +53,7 @@ function IPTV() {
             price={price}
             iconBg={iconBg}
             icon={icon}
+            accentColor="#f59e0b"
           />
         ))}
       </IPTVGrid>
