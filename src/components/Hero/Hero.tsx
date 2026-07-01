@@ -24,7 +24,7 @@ import { motion } from "framer-motion";
 import { itemVariants } from "../../utils/motion";
 import MotionSection from "../MotionSection/MotionSection";
 
-const WA_LINK = "https://wa.me/51907051849?text=Hola%20SuperStream%2C%20quiero%20adquirir%20un%20plan";
+const WA_LINK = "https://wa.me/51943316903?text=Hola%20SuperStream%2C%20quiero%20adquirir%20un%20plan";
 
 const PLATFORMS: { name: string; color: string; image?:string; Icon: IconType | null }[] = [
   { name: "Netflix", color: "#e50914", Icon: SiNetflix },
