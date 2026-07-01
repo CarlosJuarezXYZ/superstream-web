@@ -5,6 +5,7 @@ export const HeroSection = styled.section`
   text-align: center;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 100px;
 
   @media (max-width: 768px) {
     padding: 120px 24px 64px;
@@ -76,7 +77,7 @@ export const WaButton = styled.a`
   }
 `
 
-export const PlansButton = styled.button`
+export const PlansButton = styled.a`
   background: rgba(99, 102, 241, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.35);
   color: #a5b4fc;
@@ -137,5 +138,5 @@ export const PlatformChip = styled.div`
 
 export const PlatformDot = styled.span<{ $color: string }>`
   color: ${({ $color }) => $color};
-  font-size: 8px;
+  font-size: 20px;
 `

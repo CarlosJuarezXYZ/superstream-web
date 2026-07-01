@@ -21,10 +21,11 @@ import {
   PlatformDot,
 } from "./Hero.styled";
 import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "../../utils/motion";
 
-const WA_LINK = "https://wa.me/51943316903";
+const WA_LINK = "https://wa.me/51907051849?text=Hola%20SuperStream%2C%20quiero%20adquirir%20un%20plan";
 
-const PLATFORMS: { name: string; color: string; Icon: IconType | null }[] = [
+const PLATFORMS: { name: string; color: string; image?:string; Icon: IconType | null }[] = [
   { name: "Netflix", color: "#e50914", Icon: SiNetflix },
   { name: "Disney+", color: "#113ccf", Icon: null },
   { name: "HBO Max", color: "#b5179e", Icon: SiHbomax },
@@ -33,29 +34,6 @@ const PLATFORMS: { name: string; color: string; Icon: IconType | null }[] = [
   { name: "Paramount+", color: "#0066cc", Icon: SiParamountplus },
   { name: "YouTube Premium", color: "#ff0000", Icon: SiYoutube },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 16,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-    },
-  },
-};
 
 function Hero() {
   return (
@@ -71,12 +49,27 @@ function Hero() {
         Accede a Netflix, Disney+, HBO Max, ChatGPT Plus, Canva Pro, IPTV y más.
         Activación inmediata, soporte 24/7 y precios imbatibles.
       </HeroSub>
-      <HeroCtas>
-        <WaButton href={WA_LINK} target="_blank" rel="noopener noreferrer">
+      <HeroCtas as={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible">
+        <WaButton  as={motion.a}
+            variants={itemVariants}
+            whileHover={{
+              y: -4,
+              scale: 1.03,
+            }} href={WA_LINK} target="_blank" rel="noopener noreferrer">
           <FaWhatsapp size={18} />
           Pedir por WhatsApp
         </WaButton>
-        <PlansButton>Ver todos los planes →</PlansButton>
+        <PlansButton href="#plans" as={motion.a}
+            variants={itemVariants}
+            whileHover={{
+              y: -4,
+              scale: 1.03,
+            }}>
+          Ver todos los planes
+        </PlansButton>
       </HeroCtas>
       <PlatformsRow
         as={motion.div}
@@ -95,7 +88,7 @@ function Hero() {
             }}
           >
             {Icon ? (
-              <Icon size={14} color={color} />
+              <Icon size={16} color={color} />
             ) : (
               <PlatformDot $color={color}>●</PlatformDot>
             )}

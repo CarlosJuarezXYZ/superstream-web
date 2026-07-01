@@ -10,6 +10,8 @@ import { FaAmazon, FaTv } from 'react-icons/fa'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import PlatformCard from '../../components/PlatformCard/PlatformCard'
 import { PlatformsSection, PlatformsGrid } from './Platforms.styled'
+import { motion } from 'framer-motion'
+import { containerVariants, itemVariants } from '../../utils/motion'
 
 interface Platform {
   id: string
@@ -87,15 +89,26 @@ function Platforms() {
         subtitle="Sin complicaciones. Un pago, acceso inmediato."
       />
 
-      <PlatformsGrid>
+      <PlatformsGrid as={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible" >
         {PLATFORMS.map(({ id, name, price, iconBg, icon }) => (
-          <PlatformCard
+          <motion.div
             key={id}
-            name={name}
-            price={price}
-            iconBg={iconBg}
-            icon={icon}
-          />
+            variants={itemVariants}
+            whileHover={{
+              y: -4,
+              scale: 1.03,
+            }}
+          >
+            <PlatformCard
+              name={name}
+              price={price}
+              iconBg={iconBg}
+              icon={icon}
+            />
+          </motion.div>
         ))}
       </PlatformsGrid>
     </PlatformsSection>
