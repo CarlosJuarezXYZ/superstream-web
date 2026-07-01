@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import PricingCard from '../../components/PricingCard/PricingCard'
+import MotionSection from '../../components/MotionSection/MotionSection'
+import { itemVariants } from '../../utils/motion'
 import { PricingSection, PricingGrid } from './Pricing.styled'
 
 const WHATSAPP = 'https://wa.me/51943316903'
@@ -54,24 +57,27 @@ const PLANS: Plan[] = [
 function Pricing() {
   return (
     <PricingSection id="plans">
-      <SectionHeader
-        badge="Planes"
-        title="Planes para todos"
-        subtitle="Sin pagos internacionales. Sin complicaciones. Un solo pago mensual."
-      />
+      <MotionSection>
+        <SectionHeader
+          badge="Planes"
+          title="Planes para todos"
+          subtitle="Sin pagos internacionales. Sin complicaciones. Un solo pago mensual."
+        />
 
-      <PricingGrid>
-        {PLANS.map(({ id, name, price, features, featured }) => (
-          <PricingCard
-            key={id}
-            name={name}
-            price={price}
-            features={features}
-            featured={featured}
-            whatsappHref={WHATSAPP}
-          />
-        ))}
-      </PricingGrid>
+        <PricingGrid>
+          {PLANS.map(({ id, name, price, features, featured }) => (
+            <motion.div key={id} variants={itemVariants}>
+              <PricingCard
+                name={name}
+                price={price}
+                features={features}
+                featured={featured}
+                whatsappHref={WHATSAPP}
+              />
+            </motion.div>
+          ))}
+        </PricingGrid>
+      </MotionSection>
     </PricingSection>
   )
 }

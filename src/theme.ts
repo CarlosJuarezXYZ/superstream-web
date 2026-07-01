@@ -40,6 +40,7 @@ export const theme = {
     whatsapp: 'linear-gradient(135deg, #25d366, #128c7e)',
     hero: 'radial-gradient(ellipse, rgba(99, 102, 241, 0.18) 0%, transparent 70%)',
     text: 'linear-gradient(135deg, #fff 30%, #a5b4fc 100%)',
+    price: 'linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%)',
   },
   fonts: {
     sans: "'Inter', sans-serif",

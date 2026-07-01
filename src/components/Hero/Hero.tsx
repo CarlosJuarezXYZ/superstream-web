@@ -21,7 +21,8 @@ import {
   PlatformDot,
 } from "./Hero.styled";
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "../../utils/motion";
+import { itemVariants } from "../../utils/motion";
+import MotionSection from "../MotionSection/MotionSection";
 
 const WA_LINK = "https://wa.me/51907051849?text=Hola%20SuperStream%2C%20quiero%20adquirir%20un%20plan";
 
@@ -49,53 +50,47 @@ function Hero() {
         Accede a Netflix, Disney+, HBO Max, ChatGPT Plus, Canva Pro, IPTV y más.
         Activación inmediata, soporte 24/7 y precios imbatibles.
       </HeroSub>
-      <HeroCtas as={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible">
-        <WaButton  as={motion.a}
-            variants={itemVariants}
-            whileHover={{
-              y: -4,
-              scale: 1.03,
-            }} href={WA_LINK} target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp size={18} />
-          Pedir por WhatsApp
-        </WaButton>
-        <PlansButton href="#plans" as={motion.a}
-            variants={itemVariants}
-            whileHover={{
-              y: -4,
-              scale: 1.03,
-            }}>
-          Ver todos los planes
-        </PlansButton>
-      </HeroCtas>
-      <PlatformsRow
-        as={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {PLATFORMS.map(({ name, color, Icon }) => (
-          <PlatformChip
-            as={motion.div}
-            key={name}
-            variants={itemVariants}
-            whileHover={{
-              y: -4,
-              scale: 1.03,
-            }}
-          >
-            {Icon ? (
-              <Icon size={16} color={color} />
-            ) : (
-              <PlatformDot $color={color}>●</PlatformDot>
-            )}
-            {name}
-          </PlatformChip>
-        ))}
-      </PlatformsRow>
+      <MotionSection>
+        <HeroCtas>
+          <WaButton  as={motion.a}
+              variants={itemVariants}
+              whileHover={{
+                y: -4,
+                scale: 1.03,
+              }} href={WA_LINK} target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp size={18} />
+            Pedir por WhatsApp
+          </WaButton>
+          <PlansButton href="#plans" as={motion.a}
+              variants={itemVariants}
+              whileHover={{
+                y: -4,
+                scale: 1.03,
+              }}>
+            Ver todos los planes
+          </PlansButton>
+        </HeroCtas>
+        <PlatformsRow>
+          {PLATFORMS.map(({ name, color, Icon }) => (
+            <PlatformChip
+              as={motion.div}
+              key={name}
+              variants={itemVariants}
+              whileHover={{
+                y: -4,
+                scale: 1.03,
+              }}
+            >
+              {Icon ? (
+                <Icon size={16} color={color} />
+              ) : (
+                <PlatformDot $color={color}>●</PlatformDot>
+              )}
+              {name}
+            </PlatformChip>
+          ))}
+        </PlatformsRow>
+      </MotionSection>
     </HeroSection>
   );
 }

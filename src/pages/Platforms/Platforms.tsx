@@ -11,7 +11,9 @@ import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import PlatformCard from '../../components/PlatformCard/PlatformCard'
 import { PlatformsSection, PlatformsGrid } from './Platforms.styled'
 import { motion } from 'framer-motion'
-import { containerVariants, itemVariants } from '../../utils/motion'
+import { itemVariants } from '../../utils/motion'
+import MotionSection from '../../components/MotionSection/MotionSection'
+import disneyLogo from '../../assets/disney.jpg'
 
 interface Platform {
   id: string
@@ -19,6 +21,7 @@ interface Platform {
   price: number
   iconBg: string
   icon: ReactNode
+  logo?:string
 }
 
 const PLATFORMS: Platform[] = [
@@ -26,22 +29,23 @@ const PLATFORMS: Platform[] = [
     id: 'netflix',
     name: 'Netflix',
     price: 18,
-    iconBg: '#e50914',
-    icon: <SiNetflix size={26} color="white" />,
+    iconBg: "",
+    icon: <SiNetflix size={36} color="#e50914" />,
   },
   {
     id: 'disney',
     name: 'Disney+',
     price: 10,
-    iconBg: '#113ccf',
-    icon: <span style={{ color: 'white', fontWeight: 900, fontSize: 13 }}>D+</span>,
+    iconBg: "",
+    icon: "",
+    logo: disneyLogo
   },
   {
     id: 'hbo',
     name: 'HBO Max',
     price: 10,
     iconBg: '#b5179e',
-    icon: <SiHbomax size={22} color="white" />,
+    icon: <SiHbomax size={36} color="white" />,
   },
   {
     id: 'prime',
@@ -68,8 +72,8 @@ const PLATFORMS: Platform[] = [
     id: 'yt-premium',
     name: 'YouTube Premium',
     price: 10,
-    iconBg: '#ff0000',
-    icon: <SiYoutube size={26} color="white" />,
+    iconBg: "",
+    icon: <SiYoutube size={42} color="#ff0000" />,
   },
   {
     id: 'yt-tv',
@@ -83,34 +87,30 @@ const PLATFORMS: Platform[] = [
 function Platforms() {
   return (
     <PlatformsSection id="products">
-      <SectionHeader
-        badge="Plataformas Streaming"
-        title="Todas tus plataformas favoritas"
-        subtitle="Sin complicaciones. Un pago, acceso inmediato."
-      />
+      <MotionSection>
+        <SectionHeader
+          badge="Plataformas Streaming"
+          title="Todas tus plataformas favoritas"
+          subtitle="Sin complicaciones. acceso inmediato."
+        />
 
-      <PlatformsGrid as={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible" >
-        {PLATFORMS.map(({ id, name, price, iconBg, icon }) => (
-          <motion.div
-            key={id}
-            variants={itemVariants}
-            whileHover={{
-              y: -4,
-              scale: 1.03,
-            }}
-          >
-            <PlatformCard
-              name={name}
-              price={price}
-              iconBg={iconBg}
-              icon={icon}
-            />
-          </motion.div>
-        ))}
-      </PlatformsGrid>
+        <PlatformsGrid>
+          {PLATFORMS.map(({ id, name, price, iconBg, icon,logo }) => (
+            <motion.div
+              key={id}
+              variants={itemVariants}
+            >
+              <PlatformCard
+                name={name}
+                price={price}
+                iconBg={iconBg}
+                icon={icon}
+                logo={logo}
+              />
+            </motion.div>
+          ))}
+        </PlatformsGrid>
+      </MotionSection>
     </PlatformsSection>
   )
 }

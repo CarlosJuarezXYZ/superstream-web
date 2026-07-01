@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import TermCard from '../../components/TermCard/TermCard'
+import MotionSection from '../../components/MotionSection/MotionSection'
+import { itemVariants } from '../../utils/motion'
 import { TermsSection, TermsGrid } from './Terms.styled'
 
 interface Term {
@@ -48,22 +51,25 @@ const TERMS: Term[] = [
 function Terms() {
   return (
     <TermsSection id="terms">
-      <SectionHeader
-        badge="Términos"
-        title="Condiciones del servicio"
-        subtitle="Lee las condiciones antes de contratar. Sin letra pequeña."
-      />
+      <MotionSection>
+        <SectionHeader
+          badge="Términos"
+          title="Condiciones del servicio"
+          subtitle="Lee las condiciones antes de contratar. Sin letra pequeña."
+        />
 
-      <TermsGrid>
-        {TERMS.map(({ id, number, category, rules }) => (
-          <TermCard
-            key={id}
-            number={number}
-            category={category}
-            rules={rules}
-          />
-        ))}
-      </TermsGrid>
+        <TermsGrid>
+          {TERMS.map(({ id, number, category, rules }) => (
+            <motion.div key={id} variants={itemVariants}>
+              <TermCard
+                number={number}
+                category={category}
+                rules={rules}
+              />
+            </motion.div>
+          ))}
+        </TermsGrid>
+      </MotionSection>
     </TermsSection>
   )
 }

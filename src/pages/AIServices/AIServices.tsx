@@ -1,8 +1,11 @@
 import type { ReactNode } from 'react'
 import { SiOpenai, SiCanva } from 'react-icons/si'
 import { FaRobot } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import PlatformCard from '../../components/PlatformCard/PlatformCard'
+import MotionSection from '../../components/MotionSection/MotionSection'
+import { itemVariants } from '../../utils/motion'
 import { AIServicesSection, AIServicesGrid } from './AIServices.styled'
 
 interface AIService {
@@ -40,24 +43,27 @@ const AI_SERVICES: AIService[] = [
 function AIServices() {
   return (
     <AIServicesSection>
-      <SectionHeader
-        badge="Herramientas de IA"
-        title="Inteligencia Artificial al alcance"
-        subtitle="Las mejores herramientas de IA, sin pagar precios internacionales."
-      />
+      <MotionSection>
+        <SectionHeader
+          badge="Herramientas de IA"
+          title="Inteligencia Artificial al alcance"
+          subtitle="Las mejores herramientas de IA, sin pagar precios internacionales."
+        />
 
-      <AIServicesGrid>
-        {AI_SERVICES.map(({ id, name, price, iconBg, icon }) => (
-          <PlatformCard
-            key={id}
-            name={name}
-            price={price}
-            iconBg={iconBg}
-            icon={icon}
-            accentColor="#34d399"
-          />
-        ))}
-      </AIServicesGrid>
+        <AIServicesGrid>
+          {AI_SERVICES.map(({ id, name, price, iconBg, icon }) => (
+            <motion.div key={id} variants={itemVariants}>
+              <PlatformCard
+                name={name}
+                price={price}
+                iconBg={iconBg}
+                icon={icon}
+                accentColor="#34d399"
+              />
+            </motion.div>
+          ))}
+        </AIServicesGrid>
+      </MotionSection>
     </AIServicesSection>
   )
 }

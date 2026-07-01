@@ -1,7 +1,10 @@
 import type { ReactNode } from 'react'
 import { FaBolt, FaWhatsapp, FaShieldAlt, FaCoins } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import BenefitCard from '../../components/BenefitCard/BenefitCard'
+import MotionSection from '../../components/MotionSection/MotionSection'
+import { itemVariants } from '../../utils/motion'
 import { BenefitsSection, BenefitsGrid } from './Benefits.styled'
 
 interface Benefit {
@@ -41,22 +44,25 @@ const BENEFITS: Benefit[] = [
 function Benefits() {
   return (
     <BenefitsSection id="benefits">
-      <SectionHeader
-        badge="Beneficios"
-        title="¿Por qué elegir SuperStream?"
-        subtitle="Todo lo que necesitas, sin las complicaciones de siempre."
-      />
+      <MotionSection>
+        <SectionHeader
+          badge="Beneficios"
+          title="¿Por qué elegir SuperStream?"
+          subtitle="Todo lo que necesitas, sin las complicaciones de siempre."
+        />
 
-      <BenefitsGrid>
-        {BENEFITS.map(({ id, icon, title, description }) => (
-          <BenefitCard
-            key={id}
-            icon={icon}
-            title={title}
-            description={description}
-          />
-        ))}
-      </BenefitsGrid>
+        <BenefitsGrid>
+          {BENEFITS.map(({ id, icon, title, description }) => (
+            <motion.div key={id} variants={itemVariants}>
+              <BenefitCard
+                icon={icon}
+                title={title}
+                description={description}
+              />
+            </motion.div>
+          ))}
+        </BenefitsGrid>
+      </MotionSection>
     </BenefitsSection>
   )
 }

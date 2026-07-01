@@ -10,13 +10,22 @@ export const containerVariants = {
 export const itemVariants = {
   hidden: {
     opacity: 0,
-    y: 16,
+    y: 40,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.35,
+      duration: 0.55,
+      ease: "easeOut" as const,
     },
+  },
+};
+
+export const hoverCard = {
+  y: -4,
+  scale: 1.03,
+  transition: {
+    duration: 0.2,
   },
 };
